@@ -6,12 +6,12 @@ title: Postgres.app Documentation
 ## Documentation
 
 - [Installing and Uninstalling](install.html)
-- [Available Versions of Postgres.app](all-versions.html)
 - [Updating](update.html)
 - [Migrating data](migrating-data.html)
 - [Removing other PostgreSQL installations](remove.html)
 - [CLI Tools](cli-tools.html)
 - [GUI Apps](gui-tools.html)
+- [Using PL/Python](plpython.html)
 - [Troubleshooting & Support](troubleshooting.html)
 
 ## Additional Resources

@@ -12,11 +12,7 @@ Postgres.app has a beautiful user interface and a convenient menu bar item.
 You never need to touch the command line to use it – but of course we do include all the necessary [command line tools](/documentation/cli-tools.html) and header files for advanced users.
 
 
-
-Postgres.app updates automatically, so you get bugfixes as soon as possible.
-
-The current version requires macOS {{site.postgresappMinSystemVersion}} or later and comes with the latest PostgreSQL versions ({{ site.postgresqlVersions | map: "postgres" | array_to_sentence_string: "and" }}), but we also maintain [other versions](documentation/all-versions.html) of Postgres.app.
-
+Postgres.app can install minor updates automatically, so you get bugfixes as soon as possible.
 
 
 Installing Postgres.app
@@ -125,7 +121,7 @@ while ($row = $statement->fetch()) {
 				Or the <tt>pg_connect()</tt> functions (procedural):
 			</p>
 			<pre><code>&lt;?php
-$conn = pg_connect("postgresql://localhost");
+$conn = pg_connect("host=localhost");
 $result = pg_query($conn, "SELECT datname FROM pg_database");
 while ($row = pg_fetch_row($result)) {
     echo "&lt;p>" . htmlspecialchars($row[0]) . "&lt;/p>\n";
@@ -312,4 +308,4 @@ License
 Postgres.app, PostgreSQL, and its extensions are released under the [PostgreSQL License](http://www.postgresql.org/about/licence/). 
 The released binaries also include OpenSSL ([OpenSSL License](https://www.openssl.org/source/license.html)), PostGIS ([GPLv2](http://opensource.org/licenses/gpl-2.0)), and plv8 ([3 clause BSD](http://opensource.org/licenses/BSD-3-Clause)).
 
-Postgres.app is maintained by [Jakob Egger](https://github.com/jakob) and [Chris Pastl](https://github.com/chrispysoft). It was originally created by [Mattt Thompson](https://github.com/mattt).
+Postgres.app is maintained by [Jakob Egger](https://github.com/jakob). It was originally created by [Mattt Thompson](https://github.com/mattt).

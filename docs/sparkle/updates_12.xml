@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Postgres Changelog</title>
+    <link>https://postgresapp.com/sparkle/updates_12.xml</link>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+	<item>
+		<title>Postgres.app 2.4.1</title>
+		<description>
+			<![CDATA[
+				<ul>
+					<li>PostgreSQL 12.5 with PostGIS 3.0.2</li>
+				</ul>
+				
+				<p>
+					To save bandwidth, this update only includes bugfix updates for PostgreSQL server versions you already have installed.
+					You can download other versions of PostgreSQL on our website:
+					<a href="https://postgresapp.com/downloads.html">postgresapp.com/downloads.html</a>
+				</p>
+			]]>
+		</description>
+		<pubDate>Thu, 12 Nov 2020 13:05:39 +0100</pubDate>
+		<enclosure
+		url="https://github.com/PostgresApp/PostgresApp/releases/download/v2.4.1/Postgres-2.4.1-12.dmg"
+		sparkle:version="99"
+		sparkle:shortVersionString="2.4.1"
+		length="65334818"
+		type="application/octet-stream"
+		sparkle:dsaSignature="MCwCFCGkgIRCxdvNetI/rxlyveAW06HMAhRu3Gobff7duu9k0gI7sJYoN83Wjg=="
+		/>
+	</item>
+  </channel>
+</rss>

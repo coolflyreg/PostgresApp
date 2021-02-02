@@ -40,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 					}
 				} else {
 					let url = Bundle.main.url(forAuxiliaryExecutable: "PostgresMenuHelper.app")!
-					NSWorkspace.shared().open(url)
+					NSWorkspace.shared.open(url)
 				}
 			}
 			
@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 		
 		if UserDefaults.standard.bool(forKey: "HideMenuHelperApp") == false {
 			let url = Bundle.main.url(forAuxiliaryExecutable: "PostgresMenuHelper.app")!
-			NSWorkspace.shared().open(url)
+			NSWorkspace.shared.open(url)
 			NSApp.activate(ignoringOtherApps: true)
 		}
 		
@@ -76,12 +76,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 		serverManager.refreshServerStatuses()
 	}
 	
-	func showPreferences() -> Bool {
-		return NSApp.sendAction(preferencesMenuItem.action!, to: preferencesMenuItem.target, from: preferencesMenuItem)
+	func showPreferences() {
+		// The preference window is displayed by a storyboard segue hooked up to a menu item
+		// This seems to be the easiest way to trigger that segue programmatically
+		NSApp.sendAction(preferencesMenuItem.action!, to: preferencesMenuItem.target, from: preferencesMenuItem)
 	}
 	
 	@IBAction func openHelp(_ sender: AnyObject?) {
-		NSWorkspace.shared().open(URL(string: "http://postgresapp.com/documentation/")!)
+		NSWorkspace.shared.open(URL(string: "http://postgresapp.com/documentation/")!)
 	}
 	
 	
@@ -98,7 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 		}
 		
 		let plistPath = laPath+"/"+laName+".plist"
-		let attributes: [String: Any] = [FileAttributeKey.posixPermissions.rawValue: NSNumber(value: 0o600)]
+		let attributes: [FileAttributeKey: Any] = [.posixPermissions: 0o600]
 		do {
 			let data = try Data(contentsOf: Bundle.main.url(forResource: laName, withExtension: "plist")!)
 			if !FileManager.default.createFile(atPath: plistPath, contents: data, attributes: attributes) {
@@ -135,4 +137,3 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 	}
 	
 }
-

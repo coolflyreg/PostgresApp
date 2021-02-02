@@ -14,10 +14,6 @@ für fortgeschrittene User_innen sind jedoch sämtliche [Command Line Tools](/de
 
 Postgres.app hat eine automatische Updatefunktion. Neue Versionen werden zeitgleich mit neuen Releases von PostgreSQL bereitgestellt.
 
-Die aktuelle Version erfordert macOS {{site.postgresappMinSystemVersion}} oder neuer und wird mit den neuesten PostgreSQL Versionen ausgeliefert ({{ site.postgresqlVersions | map: "postgres" | array_to_sentence_string: "und" }}).
-Wir bieten aber auch [andere Versionen](documentation/all-versions.html) zum Download an.
-
-
 
 Installation
 -----------------------
@@ -124,7 +120,7 @@ while ($row = $statement->fetch()) {
 				Verbindung mittels <tt>pg_connect()</tt> (prozedural):
 			</p>
 			<pre>&lt;?php
-$conn = pg_connect("postgresql://localhost");
+$conn = pg_connect("host=localhost");
 $result = pg_query($conn, "SELECT datname FROM pg_database");
 while ($row = pg_fetch_row($result)) {
     echo "&lt;p>" . htmlspecialchars($row[0]) . "&lt;/p>\n";
@@ -308,5 +304,5 @@ Lizenz
 Postgres.app, PostgreSQL und alle verwendeten Extensions sind unter der [PostgreSQL License](http://www.postgresql.org/about/licence/) veröffentlicht. 
 Die veröffentlichten binaries enthalten auch noch OpenSSL ([OpenSSL Lizenz](https://www.openssl.org/source/license.html)), PostGIS ([GPLv2](http://opensource.org/licenses/gpl-2.0)), und plv8 ([3 clause BSD](http://opensource.org/licenses/BSD-3-Clause)).
 
-Postgres.app wird derzeit von [Jakob Egger](https://github.com/jakob) und [Chris Pastl](https://github.com/chrispysoft) weiterentwickelt und betreut.
+Postgres.app wird von [Jakob Egger](https://github.com/jakob) weiterentwickelt und betreut.
 Postgres.app wurde ursprünglich von [Mattt Thompson](https://github.com/mattt) entwickelt.
